@@ -130,3 +130,46 @@
 .scroll-up { animation: scroll-up 40s linear infinite; }
 .scroll-down { animation: scroll-down 40s linear infinite; }
 .scroll-up-slow { animation: scroll-up 55s linear infinite; }
+
+/* 3D perspective utilities */
+.perspective-1000 { perspective: 1000px; }
+.perspective-1500 { perspective: 1500px; }
+.preserve-3d { transform-style: preserve-3d; }
+.backface-hidden { backface-visibility: hidden; }
+
+/* Floating orbs */
+@keyframes float-orb {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+  33% { transform: translate3d(20px, -30px, 0) rotate(120deg); }
+  66% { transform: translate3d(-15px, 20px, 0) rotate(240deg); }
+}
+.animate-float-orb { animation: float-orb 18s ease-in-out infinite; }
+
+/* Premium glow pulse */
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 hsl(var(--bordeaux) / 0.4), 0 20px 60px -20px hsl(var(--bordeaux) / 0.4); }
+  50% { box-shadow: 0 0 0 20px hsl(var(--bordeaux) / 0), 0 30px 80px -20px hsl(var(--bordeaux) / 0.55); }
+}
+.animate-glow-pulse { animation: glow-pulse 4s ease-in-out infinite; }
+
+/* Shine sweep */
+@keyframes shine {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+.animate-shine {
+  background: linear-gradient(110deg, transparent 30%, hsl(var(--rose) / 0.6) 50%, transparent 70%);
+  background-size: 200% 100%;
+  animation: shine 3s linear infinite;
+}
+
+/* Spin slow for 3D rings */
+@keyframes spin-slow { to { transform: rotate(360deg); } }
+.animate-spin-slow { animation: spin-slow 30s linear infinite; }
+.animate-spin-reverse { animation: spin-slow 24s linear infinite reverse; }
+
+/* Mask fade for marquees */
+.mask-fade {
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}

@@ -2,6 +2,7 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
+import { StoreBadges } from "@/components/StoreBadges";
 
 export function CTASection() {
   return (
@@ -9,8 +10,8 @@ export function CTASection() {
       <div className="container">
         <ScrollReveal>
           <div className="gradient-bordeaux rounded-[2.5rem] p-12 md:p-20 text-center relative overflow-hidden shadow-bordeaux">
-            <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-primary-foreground/10 blur-3xl" />
-            <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-primary-foreground/5 blur-3xl" />
+            <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-primary-foreground/10 blur-3xl animate-float-orb" />
+            <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-primary-foreground/5 blur-3xl animate-float-orb" style={{ animationDelay: "-8s" }} />
             <div className="absolute inset-0 grid-pattern opacity-10" />
             <div className="relative z-10 max-w-2xl mx-auto">
               <div className="inline-flex items-center gap-2 rounded-full bg-primary-foreground/15 backdrop-blur px-4 py-1.5 mb-6">
@@ -23,19 +24,29 @@ export function CTASection() {
               <p className="text-primary-foreground/80 text-lg max-w-lg mx-auto mb-10">
                 Rejoignez les milliers de commerçants africains qui pilotent leur stock, leurs ventes et leurs profits avec Auraliflow.
               </p>
-              <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
                 <Link to="/register">
-                  <Button size="lg" className="bg-primary-foreground text-primary hover:bg-rose text-base px-8 h-12 font-semibold">
+                  <Button size="lg" className="bg-primary-foreground text-primary hover:bg-rose text-sm px-6 h-11 font-semibold">
                     Démarrer gratuitement
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
                 <Link to="/pricing">
-                  <Button size="lg" variant="outline" className="text-base px-8 h-12 border-primary-foreground/30 bg-transparent text-primary-foreground hover:bg-primary-foreground/10">
+                  <Button size="lg" variant="outline" className="text-sm px-6 h-11 border-primary-foreground/30 bg-transparent text-primary-foreground hover:bg-primary-foreground/10">
                     Voir les tarifs
                   </Button>
                 </Link>
               </div>
+
+              <div className="mt-10 pt-8 border-t border-primary-foreground/15">
+                <p className="text-xs font-semibold text-primary-foreground/80 uppercase tracking-wider mb-4">
+                  Ou téléchargez l'application mobile
+                </p>
+                <div className="flex justify-center">
+                  <StoreBadges variant="light" size="sm" className="justify-center" />
+                </div>
+              </div>
+
               <p className="text-xs text-primary-foreground/60 mt-6">Aucune carte requise · Annulation à tout moment</p>
             </div>
           </div>

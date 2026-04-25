@@ -60,12 +60,12 @@ const slides: Slide[] = [
   {
     category: "Ventes",
     title: "Ventes & gestion de la marge",
-    description: "Encaissez, facturez et suivez vos marges — depuis le terrain, même hors-ligne.",
+    description: "Encaissez, facturez et suivez vos marges depuis le terrain.",
     bg: personImg2,
     screenshot: appScreen3,
     accent: "hsl(var(--bordeaux-light))",
     features: [
-      { icon: ShoppingCart, label: "Prise de commande mobile offline" },
+      { icon: ShoppingCart, label: "Prise de commande mobile rapide" },
       { icon: FileText, label: "Devis & promesses d'achat avec réservation" },
       { icon: TrendingUp, label: "Marge brute auto par vente (PR figé)" },
       { icon: Users, label: "Fiches clients & créances (CRM simple)" },
@@ -209,8 +209,11 @@ const SlideCard = ({ slide }: { slide: Slide; index: number }) => {
         }}
       />
 
+      {/* Mobile dark filter overlay for readability */}
+      <div className="md:hidden absolute inset-0 bg-black/45 z-[1]" />
+
       {/* Content grid */}
-      <div className="relative h-full grid md:grid-cols-12 gap-4 md:gap-6 p-5 md:p-10 lg:p-12">
+      <div className="relative z-[2] h-full grid md:grid-cols-12 gap-4 md:gap-6 p-5 md:p-10 lg:p-12">
         {/* Left: title + screenshot */}
         <div className="md:col-span-7 flex flex-col justify-between min-h-0">
           <div>
@@ -226,8 +229,8 @@ const SlideCard = ({ slide }: { slide: Slide; index: number }) => {
             </span>
           </div>
 
-          {/* Mockup */}
-          <div className="flex-1 flex items-center justify-center my-2 md:my-4 min-h-0">
+          {/* Mockup — hidden on mobile to avoid overlap with title */}
+          <div className="hidden md:flex flex-1 items-center justify-center my-2 md:my-4 min-h-0">
             <motion.div
               initial={{ y: 30, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
@@ -243,16 +246,16 @@ const SlideCard = ({ slide }: { slide: Slide; index: number }) => {
           </div>
 
           {/* Title bottom-left */}
-          <div className="max-w-lg">
+          <div className="max-w-lg mt-4 md:mt-0">
             <h3 className="font-display font-semibold text-warm-cream text-white text-xl md:text-3xl lg:text-4xl leading-[1.1] tracking-tight mb-2 md:mb-3">
               {slide.title}
             </h3>
           </div>
         </div>
 
-        {/* Right: feature list */}
+        {/* Right: feature list — solid dark card on mobile, glassmorphic on desktop */}
         <div className="md:col-span-5 flex flex-col justify-start md:pt-12">
-          <div className="rounded-2xl bg-warm-cream/[0.08] backdrop-blur-md border border-warm-cream/15 p-4 md:p-5 space-y-2 md:space-y-2.5">
+          <div className="rounded-2xl bg-black/5 md:bg-warm-cream/[0.08] md:backdrop-blur-md border border-warm-cream/20 md:border-warm-cream/15 p-4 md:p-5 space-y-2 md:space-y-2.5">
             <p className="text-warm-cream/60 text-white text-[9px] md:text-[10px] font-bold uppercase tracking-[0.2em] mb-3">
               Fonctionnalités clés
             </p>

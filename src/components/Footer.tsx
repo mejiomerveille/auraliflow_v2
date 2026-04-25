@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { Instagram, Linkedin, Twitter, Mail } from "lucide-react";
-import logoAurali from "@/assets/logo-aurali-flow.png";
-
+import { StoreBadges } from "@/components/StoreBadges";
 
 const footerLinks = {
   Produit: ["Fonctionnalités", "Tarifs", "API", "Application mobile", "Intégrations"],
@@ -17,7 +16,10 @@ export function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-6 gap-10">
           <div className="col-span-2">
             <div className="flex items-center gap-2.5 mb-5">
-              <img src={logoAurali} alt="Aurali Flow" className="h-6 brightness-0 invert" />
+              <div className="h-10 w-10 rounded-xl bg-primary-foreground flex items-center justify-center">
+                <span className="font-heading font-black text-primary text-lg">A</span>
+              </div>
+              <span className="font-heading text-2xl font-bold">Auraliflow</span>
             </div>
             <p className="text-sm text-primary-foreground/70 max-w-xs leading-relaxed">
               La nouvelle référence pour la gestion de votre stock. Pensée pour les commerçants africains, conçue pour grandir avec vous.
@@ -28,6 +30,15 @@ export function Footer() {
                   <Icon className="h-4 w-4" />
                 </a>
               ))}
+            </div>
+
+            <div className="mt-8">
+              <p className="text-xs font-semibold text-primary-foreground/70 uppercase tracking-wider mb-3 text-center sm:text-left">
+                Téléchargez l'app
+              </p>
+              <div className="flex justify-center sm:justify-start">
+                <StoreBadges variant="light" size="sm" />
+              </div>
             </div>
           </div>
           {Object.entries(footerLinks).map(([title, links]) => (

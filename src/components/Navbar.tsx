@@ -3,8 +3,6 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logoAurali from "@/assets/logo-aurali-flow.png";
-
 
 const navLinks = [
   { label: "Fonctionnalités", href: "/#features" },
@@ -35,7 +33,10 @@ export function Navbar() {
     >
       <div className="container flex h-16 items-center justify-between">
         <Link to="/" className="flex items-center gap-2.5">
-          <img src={logoAurali} alt="Aurali Flow" className="h-6" />
+          <div className="h-9 w-9 rounded-xl gradient-bordeaux flex items-center justify-center shadow-bordeaux">
+            <span className="font-heading font-black text-primary-foreground text-lg">A</span>
+          </div>
+          <span className="font-heading text-xl font-bold text-foreground">Auraliflow</span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-8">
@@ -52,7 +53,7 @@ export function Navbar() {
 
         <div className="hidden md:flex items-center gap-2">
           <Link to="/login">
-            <Button variant="ghost" size="sm">Telecharger</Button>
+            <Button variant="ghost" size="sm">Se connecter</Button>
           </Link>
           <Link to="/register">
             <Button size="sm" className="bg-primary text-primary-foreground hover:bg-bordeaux-dark shadow-bordeaux">

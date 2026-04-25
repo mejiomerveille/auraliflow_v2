@@ -5,14 +5,19 @@ import { ArrowRight, PlayCircle, Sparkles } from "lucide-react";
 import appHome from "@/assets/app-home.png";
 import appProduits from "@/assets/app-produits.png";
 import appFinances from "@/assets/app-finances.png";
+import { StoreBadges } from "@/components/StoreBadges";
+import { Tilt3D, Float } from "@/components/Floating3D";
 
 export function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center pt-28 pb-16 overflow-hidden">
       <div className="absolute inset-0 gradient-radial" />
       <div className="absolute inset-0 grid-pattern opacity-40" />
-      <div className="absolute top-32 -right-20 w-[500px] h-[500px] rounded-full bg-primary/10 blur-3xl" />
-      <div className="absolute bottom-0 -left-20 w-[400px] h-[400px] rounded-full bg-accent/15 blur-3xl" />
+
+      {/* Floating 3D orbs */}
+      <div className="absolute top-32 -right-20 w-[500px] h-[500px] rounded-full bg-primary/10 blur-3xl animate-float-orb" />
+      <div className="absolute bottom-0 -left-20 w-[400px] h-[400px] rounded-full bg-accent/15 blur-3xl animate-float-orb" style={{ animationDelay: "-6s" }} />
+      <div className="absolute top-1/2 left-1/3 w-[300px] h-[300px] rounded-full bg-bordeaux-light/10 blur-3xl animate-float-orb" style={{ animationDelay: "-12s" }} />
 
       <div className="container relative z-10">
         <div className="grid lg:grid-cols-12 gap-12 items-center">
@@ -32,30 +37,23 @@ export function HeroSection() {
               <span className="text-xs font-semibold text-foreground">Nouveau · Anticipation intelligente du stock</span>
             </motion.div>
 
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-heading font-bold leading-[1.05] text-foreground">
-              La nouvelle <br />
-              <span className="italic-accent">référence</span> pour <br />
-              gérer votre <span className="text-gradient-bordeaux">stock</span>.
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-heading font-bold leading-[1.1] lg:leading-[1.05] text-foreground">
+              La nouvelle référence pour gérer votre <span className="text-gradient-bordeaux">stock</span>.
             </h1>
 
-            <p className="mt-7 text-lg text-muted-foreground max-w-xl leading-relaxed">
+            <p className="mt-7 text-base sm:text-lg text-muted-foreground max-w-xl leading-relaxed">
               Auraliflow réunit <strong className="text-foreground">gestion, traçabilité, inventaire</strong> et anticipation de stock dans une seule plateforme — pensée pour les commerçants africains qui veulent grandir sereinement.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-3 mt-9">
-              <Link to="/register">
-                <Button size="lg" className="bg-primary text-primary-foreground hover:bg-bordeaux-dark shadow-bordeaux text-base px-7 h-12">
-                  Démarrer gratuitement
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </Link>
-              <Button size="lg" variant="outline" className="text-base px-7 h-12 border-border bg-card/50">
-                <PlayCircle className="mr-2 h-5 w-5 text-primary" />
-                Voir la démo (2 min)
-              </Button>
+            {/* Store badges */}
+            <div className="mt-9">
+              <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3">
+                Téléchargez l'application mobile
+              </p>
+              <StoreBadges variant="dark" size="sm" />
             </div>
 
-            <div className="flex flex-wrap items-center gap-8 mt-12">
+            <div className="flex flex-wrap items-center gap-6 sm:gap-8 mt-10">
               <div>
                 <p className="text-3xl font-heading font-bold text-foreground">2 500+</p>
                 <p className="text-xs text-muted-foreground mt-1">Boutiques actives</p>
@@ -99,7 +97,7 @@ export function HeroSection() {
               transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1 }}
               className="absolute bottom-0 right-12 w-[220px] rounded-[2rem] overflow-hidden shadow-card ring-1 ring-border bg-card rotate-[5deg]"
             >
-              <img src={appFinances} alt="Suivi des ventes Auraliflow" className="w-full" />
+              {/* <img src={appFinances} alt="Suivi des ventes Auraliflow" className="w-full" /> */}
             </motion.div>
 
             <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 bg-card rounded-2xl shadow-card border border-border px-5 py-3 flex items-center gap-3 z-30">

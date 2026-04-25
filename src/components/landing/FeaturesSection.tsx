@@ -1,4 +1,5 @@
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { Tilt3D } from "@/components/Floating3D";
 import { Package, TrendingUp, PieChart, Users, ShieldCheck, Zap, Bell, Store, Boxes } from "lucide-react";
 
 const features = [
@@ -31,13 +32,16 @@ export function FeaturesSection() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {features.map((f, i) => (
             <ScrollReveal key={f.title} delay={i * 0.06}>
-              <div className="group rounded-3xl bg-card p-7 border border-border hover:border-primary/30 hover:shadow-card transition-all duration-300 hover:-translate-y-1 h-full">
-                <div className="h-12 w-12 rounded-2xl bg-rose flex items-center justify-center mb-5 group-hover:bg-primary group-hover:scale-110 transition-all">
-                  <f.icon className="h-5 w-5 text-primary group-hover:text-primary-foreground transition-colors" />
+              <Tilt3D intensity={6} className="h-full">
+                <div className="group rounded-3xl bg-card p-7 border border-border hover:border-primary/30 hover:shadow-card transition-all duration-300 h-full relative overflow-hidden">
+                  <div className="absolute -top-12 -right-12 w-32 h-32 rounded-full bg-primary/0 group-hover:bg-primary/5 blur-2xl transition-all duration-500" />
+                  <div className="h-12 w-12 rounded-2xl bg-rose flex items-center justify-center mb-5 group-hover:bg-primary group-hover:scale-110 transition-all relative z-10">
+                    <f.icon className="h-5 w-5 text-primary group-hover:text-primary-foreground transition-colors" />
+                  </div>
+                  <h3 className="font-heading font-semibold text-lg text-foreground mb-2 relative z-10">{f.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed relative z-10">{f.desc}</p>
                 </div>
-                <h3 className="font-heading font-semibold text-lg text-foreground mb-2">{f.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{f.desc}</p>
-              </div>
+              </Tilt3D>
             </ScrollReveal>
           ))}
         </div>

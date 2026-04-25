@@ -10,6 +10,8 @@ import { TestimonialsSection } from "@/components/landing/TestimonialsSection";
 import { PricingSection } from "@/components/landing/PricingSection";
 import { FAQSection } from "@/components/landing/FAQSection";
 import { CTASection } from "@/components/landing/CTASection";
+import { DownloadSection } from "@/components/landing/DownloadSection";
+import { ClientsSection } from "@/components/landing/ClientsSection";
 import ProblemSection from "@/components/landing/ProblemSection";
 import ServicesSection from "@/components/landing/ServicesSection";
 import ComparisonSection from "@/components/landing/ComparisonSection";
@@ -23,6 +25,7 @@ const Index = () => {
       <main>
         <HeroSection />
         <StatsSection />
+        <ClientsSection />
         <ProblemSection/>
         <ServicesSection/>
         <FeaturesSection />
@@ -31,6 +34,7 @@ const Index = () => {
         <DemoSection />
         <ShowcaseSection />
         <TestimonialsSection />
+        <DownloadSection />
         <ComparisonSection/>
         {/* <PricingSection /> */}
         <PricingSection2/>
