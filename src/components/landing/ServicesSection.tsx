@@ -255,7 +255,7 @@ const SlideCard = ({ slide }: { slide: Slide; index: number }) => {
 
         {/* Right: feature list — solid dark card on mobile, glassmorphic on desktop */}
         <div className="md:col-span-5 flex flex-col justify-start md:pt-12">
-          <div className="rounded-2xl bg-black/5 md:bg-warm-cream/[0.08] md:backdrop-blur-md border border-warm-cream/20 md:border-warm-cream/15 p-4 md:p-5 space-y-2 md:space-y-2.5">
+          <div className="rounded-2xl bg-black/55 md:bg-warm-cream/[0.08] md:backdrop-blur-md border border-warm-cream/20 md:border-warm-cream/15 p-4 md:p-5 space-y-2 md:space-y-2.5">
             <p className="text-warm-cream/60 text-white text-[9px] md:text-[10px] font-bold uppercase tracking-[0.2em] mb-3">
               Fonctionnalités clés
             </p>

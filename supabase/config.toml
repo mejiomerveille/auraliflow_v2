@@ -1,0 +1,4 @@
+project_id = "auraliflow"
+
+[functions.industries-proxy]
+verify_jwt = false
